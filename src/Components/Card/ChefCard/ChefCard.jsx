@@ -18,7 +18,7 @@ const ChefCard = ({ chef }) => {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
 
-          <Link to={`/chef/${id}`} className="btn btn-primary font-bold btn-xs sm:btn-sm md:btn-md lg:btn-lg">
+          <Link to={`/chef/${id}`} className="btn btn-primary font-bold sm:btn-sm md:btn-md lg:btn-lg">
             secret recipes{" "}
           </Link>
         </div>
