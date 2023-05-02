@@ -15,6 +15,7 @@ const Navbar = () => {
       console.error(error);
     });
   };
+  console.log(user);
   return (
     <div className="navbar bg-base-100 md:w-11/12 mx-auto">
       <div className="navbar-start">
@@ -85,8 +86,8 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        {user ? (<>
-          <img loading="lazy" className="md:w-12 w-10 mr-3 rounded-full" src={user?.photoURL} alt="" />
+        {user ? (<><div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+          <img loading="lazy" className="md:w-12 w-10 mr-3 rounded-full" src={user?.photoURL} alt="" /></div>
           <button onClick={handleSignOut} className="btn btn-primary">
             LogOut
           </button>
