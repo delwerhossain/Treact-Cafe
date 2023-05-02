@@ -1,6 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import ChefCard from "../../Components/Card/ChefCard/ChefCard";
+import ChefCard from "../../Components/ChefCard/ChefCard";
 
 const Home = () => {
    const chefsData = useLoaderData()
