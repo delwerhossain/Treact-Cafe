@@ -7,6 +7,8 @@ import About from "../pages/About/About";
 import Courses from "../pages/Courses/Courses";
 import Blogs from "../pages/Blogs/Blogs";
 import ChefDetails from "../pages/ChefDetails/ChefDetails";
+import Login from "../pages/AuthenticationPage/Login";
+import Register from "../pages/AuthenticationPage/Register";
 
 export const router = createBrowserRouter([
     {
@@ -25,12 +27,12 @@ export const router = createBrowserRouter([
           loader: ({params})=> fetch(`https://server-food-chef.vercel.app/chef/${params.id}`)
         },
         {
-          path: "about",
-          element: <About />,
+          path: "login",
+          element: <Login />,
         },
         {
-          path: "courses",
-          element: <Courses />,
+          path: "register",
+          element: <Register />,
         },
         {
           path: "blogs",
