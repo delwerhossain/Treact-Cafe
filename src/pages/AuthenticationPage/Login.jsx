@@ -1,161 +1,174 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
+
 
 const Login = () => {
-    const [disable , setDisable] =useState(false)
-  return (
-    <section className="h-screen">
-      <div className="h-full">
-        {/* Left column container with background*/}
-        <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
-          <div className="shrink-1 mb-12 grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12">
-            <img
-              src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-              className="w-full"
-              alt="Sample image"
-            />
-          </div>
-          {/* Right column container */}
-          <div className="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
-            <form>
-              {/*Sign in section*/}
-              <div className="flex flex-row items-center justify-center lg:justify-start">
-                <p className="mb-0 mr-4 text-lg">Sign in with</p>
-                {/* Facebook */}
-                <button
-                  type="button"
-                  data-te-ripple-init
-                  data-te-ripple-color="light"
-                  className="mx-1 h-9 w-9 rounded-full bg-primary uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-                >
-                  {/* Facebook */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="mx-auto h-3.5 w-3.5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-                  </svg>
-                </button>
-                {/* Twitter */}
-                <button
-                  type="button"
-                  data-te-ripple-init
-                  data-te-ripple-color="light"
-                  className="mx-1 h-9 w-9 rounded-full bg-primary uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-                >
-                  {/* Twitter */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="mx-auto h-3.5 w-3.5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                  </svg>
-                </button>
-                {/* Linkedin */}
-                <button
-                  type="button"
-                  data-te-ripple-init
-                  data-te-ripple-color="light"
-                  className="mx-1 h-9 w-9 rounded-full bg-primary uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-                >
-                  {/* Linkedin */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="mx-auto h-3.5 w-3.5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
-                  </svg>
-                </button>
-              </div>
-              {/* Separator between social media sign in and email/password sign in */}
-              <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
-                <p className="mx-4 mb-0 text-center font-semibold dark:text-white">
-                  Or
-                </p>
-              </div>
-              {/* Email input */}
-              <div className="relative mb-6" data-te-input-wrapper-init>
-                <input
-                  type="text"
-                  className="peer block min-h-[auto] w-full rounded border bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                  id="exampleFormControlInput2"
-                  placeholder="Email address"
-                />
-                <label
-                  htmlFor="exampleFormControlInput2"
-                  className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                >
-                  Email address
-                </label>
-              </div>
-              {/* Password input */}
-              <div className="relative mb-6" data-te-input-wrapper-init>
-                <input
-                  type="password"
-                  className="peer block min-h-[auto] w-full rounded border bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                  id="exampleFormControlInput22"
-                  placeholder="Password"
-                />
-                <label
-                  htmlFor="exampleFormControlInput22"
-                  className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                >
-                  Password
-                </label>
-              </div>
-              <div className="mb-6 flex items-center justify-between">
-                {/* Remember me checkbox */}
-                <div className="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
-                  <input
-                    className="relative float-left -ml-[1.5rem] mr-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem] border-solid border-neutral-300 outline-none before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:-mt-px checked:after:ml-[0.25rem] checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:-mt-px checked:focus:after:ml-[0.25rem] checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-l-0 checked:focus:after:border-t-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent dark:border-neutral-600 dark:checked:border-primary dark:checked:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
-                    type="checkbox"
-                    defaultValue
-                    id="exampleCheck2"
-                  />
-                  <label
-                    className="inline-block pl-[0.15rem] hover:cursor-pointer"
-                    htmlFor="exampleCheck2"
-                  >
-                    Remember me
-                  </label>
-                </div>
-                {/*Forgot password link*/}
-                <a href="#!">Forgot password?</a>
-              </div>
-              {/* Login button */}
-              <div className="text-center lg:text-left">
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  data-te-ripple-init
-                  data-te-ripple-color="light"
-                >
-                  Login
-                </button>
-                {/* Register link */}
-                <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
-                  Don't have an account?
-                  <Link
-                    to={"/register"}
-                    href="#!"
-                    className="text-danger transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700 underline mx-1"
-                  >
-                    Register
-                  </Link>
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+ // location
+ const navigate = useNavigate();
+ const location = useLocation();
+ const from = location?.state?.from?.pathname || "/";
+ // useContext
+ const { signInUser, signInPopGit, signInPopGoogle } = useContext(AuthContext);
+ // state
+ const [error, setError] = useState("");
+ const [success, setSuccess] = useState("");
+ const [user, setUser] = useState("");
+ const [show,setShow] = useState(false);
+
+ // authentication
+ const handleLogin = (e) => {
+   e.preventDefault();
+   const email = e.target.email.value;
+   const password = e.target.password.value;
+   signInUser(email, password)
+     .then((result) => {
+       console.log(result);
+       setUser(result.user);
+       setError("");
+       setSuccess("successfully login");
+       document.getElementById("form").reset();
+       navigate(from, { replace: true });
+     })
+     .catch((error) => {
+       console.error(error);
+       setError(error.code);
+       setSuccess("");
+     });
+ };
+
+ // popup with authentication
+ const handleGooglePopup = () => {
+   signInPopGoogle()
+     .then((result) => {
+       console.log(result);
+       setUser(result.user);
+       setError("");
+       setSuccess("successfully Login with Google");
+       navigate(from, { replace: true });
+     })
+     .catch((error) => {
+       console.error(error);
+       setError(error.code);
+       setSuccess("");
+     });
+ };
+ const handleGitPopup = () => {
+   signInPopGit()
+     .then((result) => {
+       setUser(result.user);
+       setError("");
+       setSuccess("successfully Login with Git ");
+       navigate(from, { replace: true });
+       
+     })
+     .catch((error) => {
+       console.error(error);
+       setError(error.code);
+       setSuccess("");
+     });
+ };
+
+ return (
+   <div className="hero min-h-screen bg-base-200">
+     <div className="hero-content flex-col ">
+       <div className="text-center ">
+         <h1 className="text-5xl font-bold">Log In</h1>
+       </div>
+       <div className="card w-full max-w-sm flex-shrink-0 bg-base-100 shadow-2xl md:w-screen">
+         <form id="form" onSubmit={handleLogin} className="card-body">
+           <div className="form-control">
+             <label className="label">
+               <span className="label-text">Email</span>
+             </label>
+             <input
+               name="email"
+               type="email"
+               placeholder="email"
+               className="input-bordered input"
+               required
+             />
+           </div>
+           <div className="form-control">
+             <label className="label">
+               <span className="label-text">Password</span>
+             </label>
+             <input
+               name="password"
+               type={show?'text':"password"}
+               placeholder="password"
+               className="input-bordered input"
+               required
+             />
+             <p onClick={()=>setShow(!show)} className=" mt-2 underline"> {show ? <a> hide password</a> : <a>show password</a>} </p>
+             <label className="label">
+               <a href="#" className="link-hover label-text-alt link">
+                 Forgot password?
+               </a>
+             </label>
+           </div>
+           <div className="form-control mt-6">
+             <button type="submit" className="btn border-none bg-orange-500 hover:bg-orange-600">
+               Login
+             </button>
+           </div>
+           <p
+             className={`text-xl ${
+               error === "" ? "text-green-500" : "text-red-500"
+             }`}
+           >
+             {" "}
+             {error === "" ? success : error}
+           </p>
+           <label className="label">
+             <Link
+               to={"/register"}
+               className=" link-hover label-text-alt link"
+             >
+               Sign Up for new account
+             </Link>
+           </label>
+           <div className="mt-4 flex gap-x-2">
+             <a
+               onClick={handleGooglePopup}
+               type="button"
+               className="flex w-full items-center justify-center rounded-md border border-gray-600 p-2 hover:bg-orange-300 focus:ring-2 focus:ring-violet-600 focus:ring-offset-1"
+             >
+               <svg
+                 xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 32 32"
+                 className="h-5 w-5 fill-current"
+               >
+                 <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
+               </svg>
+             </a>
+             <a
+               onClick={handleGitPopup}
+               className="flex w-full items-center justify-center rounded-md border border-gray-600 p-2 hover:bg-orange-300 focus:ring-2 focus:ring-violet-600 focus:ring-offset-1"
+             >
+               <svg
+                 xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 32 32"
+                 className="h-5 w-5 fill-current"
+               >
+                 <path d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z"></path>
+               </svg>
+             </a>
+             <a className="flex w-full items-center justify-center rounded-md border border-gray-600 p-2 hover:bg-orange-300 focus:ring-2 focus:ring-violet-600 focus:ring-offset-1">
+               <svg
+                 xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 32 32"
+                 className="h-5 w-5 fill-current"
+               >
+                 <path d="M31.937 6.093c-1.177 0.516-2.437 0.871-3.765 1.032 1.355-0.813 2.391-2.099 2.885-3.631-1.271 0.74-2.677 1.276-4.172 1.579-1.192-1.276-2.896-2.079-4.787-2.079-3.625 0-6.563 2.937-6.563 6.557 0 0.521 0.063 1.021 0.172 1.495-5.453-0.255-10.287-2.875-13.52-6.833-0.568 0.964-0.891 2.084-0.891 3.303 0 2.281 1.161 4.281 2.916 5.457-1.073-0.031-2.083-0.328-2.968-0.817v0.079c0 3.181 2.26 5.833 5.26 6.437-0.547 0.145-1.131 0.229-1.724 0.229-0.421 0-0.823-0.041-1.224-0.115 0.844 2.604 3.26 4.5 6.14 4.557-2.239 1.755-5.077 2.801-8.135 2.801-0.521 0-1.041-0.025-1.563-0.088 2.917 1.86 6.36 2.948 10.079 2.948 12.067 0 18.661-9.995 18.661-18.651 0-0.276 0-0.557-0.021-0.839 1.287-0.917 2.401-2.079 3.281-3.396z"></path>
+               </svg>
+             </a>
+           </div>
+         </form>
+       </div>
+     </div>
+   </div>
+ );
 };
 
 export default Login;
