@@ -49,7 +49,7 @@ const Navbar = () => {
                   </li> */}
                 </ul>
               </div>
-              <Link className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+              <Link className="btn btn-ghost normal-case text-3xl font-extrabold "> <span className='px-3 py-2 mr-2 text-white bg-[#580cfc]'>T</span> Treact</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
               <ul className="menu menu-horizontal px-1">
@@ -62,7 +62,7 @@ const Navbar = () => {
               </ul>
             </div>
             <div className="navbar-end">
-              <Link className="btn">Get started</Link>
+              <Link className="btn">Login</Link>
             </div>
           </div>
     );
