@@ -10,7 +10,7 @@ const ChefCard = ({ chef }) => {
           <h1 className="lg:text-7xl md:text-3xl text-3xl  font-extrabold">
             {name}
           </h1>
-          <h1 className="lg:text-6xl md:text-4xl text-3xl rounded-xl mx-auto md:w-8/12 my-6 py-4 pl-2  bg-[#580cfc] text-white font-extrabold">
+          <h1 className="lg:text-6xl md:text-4xl text-3xl rounded-xl mx-auto md:w-8/12 my-6 py-4 pl-2  bg-[#b795ff] text-white font-extrabold">
             {slogan}
           </h1>
           <p className="text-slate-500 text-xl w-10/12 mx-auto mb-4">

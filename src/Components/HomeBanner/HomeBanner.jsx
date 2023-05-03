@@ -11,7 +11,7 @@ const HomeBanner = () => {
             <h1 className="lg:text-7xl md:text-3xl text-3xl  font-extrabold">
               Delicious & Affordable
             </h1>
-            <h1 className="lg:text-6xl md:text-4xl text-3xl rounded-xl mx-auto md:w-8/12 my-6 py-4 pl-2  bg-[#580cfc] text-white font-extrabold">
+            <h1 className="lg:text-7xl md:text-5xl text-3xl rounded-xl mx-auto md:w-8/12 my-6 py-4 pl-2  bg-[#d6c3ff] text-primary font-extrabold">
               Meals Near You.
             </h1>
             <p className="text-slate-500 text-xl w-10/12 mx-auto mb-4">
