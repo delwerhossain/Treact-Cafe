@@ -5,7 +5,7 @@ const RecipeCard = ({ recipe }) => {
   const { name, image, ingredients } = recipe;
   return (
     <div>
-      <div className="grid gap-4 border w-8/12 mx-auto  rounded-2xl items-center justify-center ">
+      <div className="bg-slate-50 grid gap-4 border lg:w-8/12 mx-auto  rounded-2xl items-center justify-center ">
         <div className="my-4 text-center">
           <h1 className="lg:text-7xl md:text-3xl text-3xl  font-extrabold">
             {name}
@@ -21,7 +21,7 @@ const RecipeCard = ({ recipe }) => {
           {" "}
           <LazyLoad>
             <img
-              className="rounded-3xl mx-auto md:w-[600px] lg:w-[800px]"
+              className="rounded-3xl mx-auto w-11/12 md:w-[600px] lg:w-[800px]"
               src={image}
               alt={name}
               

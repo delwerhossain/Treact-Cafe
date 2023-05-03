@@ -38,7 +38,7 @@ const ChefDetails = () => {
             
             <LazyLoad>
           <img
-            className="rounded-3xl mx-auto w-6/12"
+            className="rounded-3xl mx-auto lg:w-6/12 md:w-10/12"
             src={image}
             alt={name}
             
@@ -50,7 +50,7 @@ const ChefDetails = () => {
           <h1 className="lg:text-6xl md:text-4xl text-3xl rounded-xl mx-auto md:w-11/12 text-center my-6 py-4 pl-2  bg-[#581fd1] text-white font-extrabold">
           Secret Recipes
             </h1>
-            <div className='grid grid-cols-1 gap-8  '>
+            <div className='grid grid-cols-1 gap-12  '>
           {recipes.map(recipe => <RecipeCard key={recipe.id} recipe={recipe}></RecipeCard>)}
 
             </div>
