@@ -11,7 +11,7 @@ const RecipeCard = ({ recipe }) => {
             {name}
           </h1>
 
-          <p className="text-slate-100 text-xl font-bold my-2 rounded-3xl py-8 bg-slate-800 w-10/12 mx-auto mb-4">
+          <p className="text-slate-100 md:text-xl font-bold my-4 rounded-3xl py-8  bg-slate-800 md:w-10/12 w-11/12 mx-auto mb-4">
             {ingredients.map((item) => (
               <p>{item}</p>
             ))}

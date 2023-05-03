@@ -28,7 +28,7 @@ const ChefDetails = () => {
           <h1 className="lg:text-6xl md:text-4xl text-3xl mx-auto md:w-6/12 my-6 py-4 pl-2  transform rotate-2 bg-[#580cfc] text-white font-extrabold">
               { slogan}
           </h1>
-          <p className="text-slate-500 text-xl w-10/12 mx-auto mb-4">
+          <p className="text-slate-500 md:text-xl w-10/12 mx-auto mb-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum est praesentium labore. Quibusdam magnam repudiandae corporis corrupti impedit quam aut, sequi laborum nulla asperiores aspernatur quia provident itaque culpa aliquam repellat cupiditate in vel accusantium vero iusto? Nostrum unde recusandae accusantium quas deleniti necessitatibus. Quos consequatur animi voluptatum at id.
           </p>
