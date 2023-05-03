@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import LazyLoad from "react-lazy-load";
+import { BsHeart, BsHeartFill } from 'react-icons/bs';
+import { IconContext } from "react-icons";
 
 const RecipeCard = ({ recipe }) => {
   const { name, image, ingredients } = recipe;
@@ -8,9 +10,14 @@ const RecipeCard = ({ recipe }) => {
     <div>
       <div className="bg-slate-50 grid gap-4 border lg:w-8/12 mx-auto  rounded-2xl items-center justify-center ">
         <div className="my-4 text-center">
-          <button onClick={()=>setLove(!love)}>
-          <AiOutlineHeart/>
+            
+          <button className="text-primary" onClick={()=>setLove(!love)}>
+          <IconContext.Provider value={{ size: '3em' }}>
+          {love ?<BsHeart /> :<BsHeartFill />}
+        </IconContext.Provider>
+             
           </button>
+
           <h1 className="lg:text-7xl md:text-3xl text-3xl  font-extrabold">
             {name}
           </h1>
