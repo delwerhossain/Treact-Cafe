@@ -32,7 +32,7 @@ const MobileBanner = () => {
                 <IconContext.Provider value={{ size: "3em" }}>
                   <IoLogoGooglePlaystore />{" "}
                   <h4 className="font-extrabold text-2xl ml-2   py-3">
-                    APP STORE
+                    Play STORE
                   </h4>
                 </IconContext.Provider>
               </div>
