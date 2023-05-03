@@ -1,63 +1,78 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
-import RecipeCard from '../../Components/RecipeCard/RecipeCard';
-import LazyLoad from 'react-lazy-load';
+import React, { useState } from "react";
+import { useEffect } from "react";
+import { useLoaderData, useParams } from "react-router-dom";
+import RecipeCard from "../../Components/RecipeCard/RecipeCard";
+import LazyLoad from "react-lazy-load";
 
 const ChefDetails = () => {
-    const chefData = useLoaderData()
-    // const paramId = useParams()
-    // const [singleChef , setSingleChef]= useState([])
-    // useEffect(() => {
-    //     const singleData = chefsData.find(data => data.id === paramId)
-    //     if (singleData) {
-    //         setSingleChef(singleData)
-    //     }
-    // },[chefsData])
-    
-    const { id, name, slogan, image ,recipes } = chefData;
+  const chefData = useLoaderData();
+  // const paramId = useParams()
+  // const [singleChef , setSingleChef]= useState([])
+  // useEffect(() => {
+  //     const singleData = chefsData.find(data => data.id === paramId)
+  //     if (singleData) {
+  //         setSingleChef(singleData)
+  //     }
+  // },[chefsData])
+
+  const { id, name, slogan, image, recipes, experience, totalRecipes, likes } =
+    chefData;
   console.log(recipes);
-  
-    return (
-        <div className="my-10 w-11/12 mx-auto border py-4 px-2 rounded-2xl">
+
+  return (
+    <div className="my-10 w-11/12 mx-auto border py-4 px-2 rounded-2xl">
       <div className="grid gap-4  items-center justify-center ">
         <div className="my-4 text-center">
           <h1 className="lg:text-7xl md:text-3xl text-3xl  font-extrabold">
             {name}
           </h1>
           <h1 className="lg:text-6xl md:text-4xl text-3xl mx-auto md:w-6/12 my-6 py-4 pl-2  transform rotate-2 bg-[#580cfc] text-white font-extrabold">
-              { slogan}
+            {slogan}
           </h1>
+          <div className="py-4 pl-2  rounded-xl mx-auto md:w-8/12  bg-violet-50 lg:text-3xl mb-4 text-2xl  font-bold">
+          <h1 className="">
+            experience {experience}
+          </h1>
+          <h1 className="">
+            Total Recipes - {totalRecipes}
+          </h1>
+          <h1 className="">
+            Total Likes - {likes}
+          </h1>
+
+          </div>
+
           <p className="text-slate-500 md:text-xl w-10/12 mx-auto mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum est praesentium labore. Quibusdam magnam repudiandae corporis corrupti impedit quam aut, sequi laborum nulla asperiores aspernatur quia provident itaque culpa aliquam repellat cupiditate in vel accusantium vero iusto? Nostrum unde recusandae accusantium quas deleniti necessitatibus. Quos consequatur animi voluptatum at id.
+            Find tested and perfected recipes that work for you the very first
+            time with Step-by-step photos, ingredient recommendations, menus for
+            holidays, entertaining and everyday family meals. Jenn Segal is a
+            classically-trained chef, cookbook author, and busy mom whose
+            mission is to make cooking easy, gratifying and fun.
           </p>
         </div>
         <div className="my-4 text-center">
-            {" "}
-            
-            <LazyLoad>
-          <img
-            className="rounded-3xl mx-auto lg:w-6/12 md:w-10/12"
-            src={image}
-            alt={name}
-            
-          />
-              
+          {" "}
+          <LazyLoad>
+            <img
+              className="rounded-3xl mx-auto lg:w-6/12 md:w-10/12"
+              src={image}
+              alt={name}
+            />
           </LazyLoad>
-          </div>
-          <div className='rounded-xl'>
+        </div>
+        <div className="rounded-xl">
           <h1 className="lg:text-6xl md:text-4xl text-3xl rounded-xl mx-auto md:w-11/12 text-center my-6 py-4 pl-2  bg-[#581fd1] text-white font-extrabold">
-          Secret Recipes
-            </h1>
-            <div className='grid grid-cols-1 gap-12  '>
-          {recipes.map(recipe => <RecipeCard key={recipe.id} recipe={recipe}></RecipeCard>)}
-
-            </div>
+            Secret Recipes
+          </h1>
+          <div className="grid grid-cols-1 gap-12  ">
+            {recipes.map((recipe) => (
+              <RecipeCard key={recipe.id} recipe={recipe}></RecipeCard>
+            ))}
           </div>
+        </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default ChefDetails;
