@@ -154,13 +154,19 @@ const Register = () => {
             </div>
             {/* check box */}
             <div className="form-control">
-  <label className="label cursor-pointer">
-    <span className="label-text">Accept terms and conditions</span> 
-    <input type="checkbox" onClick={()=>setAccept(!accept)} className="checkbox checkbox-primary" />
-  </label>
-</div>
+              <label className="label cursor-pointer">
+                <span className="label-text">Accept terms and conditions</span>
+                <input
+                  type="checkbox"
+                  onClick={() => setAccept(!accept)}
+                  className="checkbox checkbox-primary"
+                />
+              </label>
+            </div>
             <div className="form-control mt-6">
-              <button disabled={!accept} className="btn btn-primary">Login</button>
+              <button disabled={!accept} className="btn btn-primary">
+                Login
+              </button>
             </div>
             <p
               className={`text-xl ${
