@@ -1,4 +1,5 @@
 import React from "react";
+import LazyLoad from "react-lazy-load";
 
 const RecipeCard = ({ recipe }) => {
   const { name, image, ingredients } = recipe;

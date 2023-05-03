@@ -27,7 +27,7 @@ const ChefCard = ({ chef }) => {
           {" "}
           <LazyLoad>
           <img
-            className="rounded-3xl mx-auto  md:w-[600px] md:h-[500px]"
+            className="rounded-3xl mx-auto md:w-[400px] md:h-[320px]  lg:w-[640px] lg:h-[450px]"
             src={image}
             alt={name}
           />

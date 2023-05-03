@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { NavContext } from "../../../Layout/Layouts";
 import { AuthContext } from "../../../provider/AuthProvider";
+import LazyLoad from "react-lazy-load";
 
 const Navbar = () => {
   const { menuList } = useContext(NavContext);

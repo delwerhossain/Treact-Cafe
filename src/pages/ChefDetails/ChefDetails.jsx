@@ -36,7 +36,7 @@ const ChefDetails = () => {
         <div className="my-4 text-center">
             {" "}
             
-            <LazyLoad >
+            <LazyLoad>
           <img
             className="rounded-3xl mx-auto w-6/12"
             src={image}
