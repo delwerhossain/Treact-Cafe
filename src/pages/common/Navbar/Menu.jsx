@@ -15,7 +15,6 @@ const Navbar = () => {
       console.error(error);
     });
   };
-  console.log(user);
   return (
     <div className="navbar bg-base-100 md:w-11/12 mx-auto">
       <div className="navbar-start">
