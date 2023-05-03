@@ -5,7 +5,8 @@ import { RiArrowRightUpLine } from 'react-icons/ri';
 import { IconContext } from "react-icons";
 
 const ChefCard = ({ chef }) => {
-  const { id, name, image,slogan} = chef;
+  const { id, name, image, slogan, experience, totalRecipes, likes } = chef;
+  console.log(likes);
   return (
     <div className="my-10 w-11/12 mx-auto border py-4 px-2 rounded-2xl">
       <div className="grid gap-4 md:grid-cols-2 items-center md:justify-center ">
@@ -13,12 +14,21 @@ const ChefCard = ({ chef }) => {
           <h1 className="lg:text-7xl md:text-3xl text-3xl  font-extrabold">
             {name}
           </h1>
-          <h1 className="lg:text-6xl md:text-4xl text-3xl rounded-xl mx-auto md:w-8/12 my-6 py-4 pl-2  bg-[#b795ff] text-white font-extrabold">
+          <h1 className="lg:text-6xl md:text-4xl text-3xl rounded-xl mx-auto md:w-8/12 mt-6 mb-4 py-4 pl-2  bg-[#b795ff] text-white font-extrabold">
             {slogan}
           </h1>
+          <h1 className="lg:text-5xl mb-4 text-2xl  font-extrabold">
+          experience {experience}
+          </h1>
+          <h1 className="lg:text-5xl mb-4 text-2xl  font-extrabold">
+          Total Recipes -  {totalRecipes}
+          </h1>
+          <h1 className="lg:text-5xl mb-4 text-2xl  font-extrabold">
+          Total Likes -  {likes}
+          </h1>
+
           <p className="text-slate-500 text-xl w-10/12 mx-auto mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Covers articles on meal planning, food & drink, kitchen tips & tools, entertaining and holiday recipes. Doris Christopher founded Pampered Chef in 1980. She has been recognized with numerous awards.
           </p>
 
           <Link to={`/chef/${id}`} className="btn btn-primary text-xl font-bold sm:btn-sm md:btn-md lg:btn-lg">
