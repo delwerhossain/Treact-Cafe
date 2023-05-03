@@ -1,6 +1,7 @@
 import React from "react";
 import { AiOutlinePlayCircle } from "react-icons/Ai";
 import { IconContext } from "react-icons";
+import LazyLoad from "react-lazy-load";
 
 const HomeChoose = () => {
   return (
@@ -47,12 +48,16 @@ const HomeChoose = () => {
           </div>
           <div className="flex-1 my-4 text-center">
             {" "}
+            
+            <LazyLoad>
+              
             <img
               className="rounded-3xl mx-auto  "
               src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEzNzI2fQ&auto=format&fit=crop&w=768&q=80"
               alt="meal image"
-              loading="lazy"
+              
             />
+          </LazyLoad>
           </div>
         </div>
       </div>

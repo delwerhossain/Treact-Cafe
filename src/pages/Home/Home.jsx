@@ -6,6 +6,7 @@ import HomeChoose from "../../Components/HomeChoose/HomeChoose";
 
 const Home = () => {
   const chefsData = useLoaderData();
+
   return (
     <div className="my-6">
       <HomeBanner></HomeBanner>

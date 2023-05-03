@@ -1,9 +1,10 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { getAuth, updateProfile } from "firebase/auth";
 
 const auth = getAuth();
+
 const Register = () => {
   const { createUser, signInPopGit, signInPopGoogle, updateUser } =
     useContext(AuthContext);
@@ -14,10 +15,13 @@ const Register = () => {
   const [show, setShow] = useState(false);
   const [accept, setAccept] = useState(false);
 
+  //navigation
+  const navigate = useNavigate();
+
   const handleRegister = (e) => {
     e.preventDefault();
-    // const name = e.target.name.value;
-    // const pic = e.target.pic.value;
+    const name = e.target.name.value;
+    const pic = e.target.pic.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     const confirm = e.target.confirm.value;
@@ -28,25 +32,28 @@ const Register = () => {
     }
     createUser(email, password)
       .then((result) => {
+        updateProfile(result.user, {
+          displayName: name, photoURL: pic
+        }).then(() => {
+          // Profile updated!
+          // ...
+        }).catch((error) => {
+          // An error occurred
+          // ...
+        });
         setUser(result.user);
         setError("");
         setSuccess("successfully registered");
-        document.getElementById("form").reset();
+        
+      
+        navigate('/')
       })
       .catch((error) => {
         console.error(error);
         setError(error.code);
         setSuccess("");
       });
-    // updateProfile(auth.currentUser, {
-    //   displayName: name, photoURL: pic
-    // }).then(() => {
-    //   // Profile updated!
-    //   // ...
-    // }).catch((error) => {
-    //   // An error occurred
-    //   // ...
-    // });
+    
   };
   const handleGooglePopup = () => {
     signInPopGoogle()
@@ -85,7 +92,7 @@ const Register = () => {
         </div>
         <div className="card w-full max-w-sm flex-shrink-0 bg-base-100 shadow-2xl md:w-screen">
           <form id="form" onSubmit={handleRegister} className="card-body">
-            {/* <div className="form-control">
+            <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
               </label>
@@ -108,7 +115,7 @@ const Register = () => {
                 className="input-bordered input"
                 required
               />
-            </div> */}
+            </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>

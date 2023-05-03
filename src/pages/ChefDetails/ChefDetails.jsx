@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import RecipeCard from '../../Components/RecipeCard/RecipeCard';
+import LazyLoad from 'react-lazy-load';
 
 const ChefDetails = () => {
     const chefData = useLoaderData()
@@ -33,13 +34,17 @@ const ChefDetails = () => {
           </p>
         </div>
         <div className="my-4 text-center">
-          {" "}
+            {" "}
+            
+            <LazyLoad >
           <img
             className="rounded-3xl mx-auto w-6/12"
             src={image}
             alt={name}
-            loading="lazy"
+            
           />
+              
+          </LazyLoad>
           </div>
           <div className='rounded-xl'>
           <h1 className="lg:text-6xl md:text-4xl text-3xl rounded-xl mx-auto md:w-11/12 text-center my-6 py-4 pl-2  bg-[#581fd1] text-white font-extrabold">

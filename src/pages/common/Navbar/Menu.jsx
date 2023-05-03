@@ -86,7 +86,11 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {user ? (<><div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
-          <img loading="lazy" className="md:w-12 w-10 mr-3 rounded-full" src={user?.photoURL} alt="" /></div>
+          
+          <LazyLoad>
+          <img  className="md:w-12 w-10 mr-3 rounded-full" src={user?.photoURL} alt="" />  
+        </LazyLoad>
+        </div>
           <button onClick={handleSignOut} className="btn btn-primary">
             LogOut
           </button>

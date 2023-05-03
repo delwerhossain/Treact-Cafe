@@ -2,12 +2,13 @@ import React from 'react';
 
 import { AiOutlinePlayCircle } from "react-icons/Ai";
 import { IconContext } from "react-icons";
+import LazyLoad from 'react-lazy-load';
 
 const HomeBanner = () => {
     return (
         <div className="bg-[#f5f0ff] my-10 w-11/12 mx-auto border py-4 px-2 rounded-2xl">
         <div className=" gap-4 flex lg:flex-row flex-col-reverse lg: items-center md:justify-center ">
-          <div className="my-4 text-center">
+          <div className="my-4 flex-1 text-center">
             <h1 className="lg:text-7xl md:text-3xl text-3xl  font-extrabold">
               Delicious & Affordable
             </h1>
@@ -38,12 +39,15 @@ const HomeBanner = () => {
           </div>
           <div className="my-4 text-center">
             {" "}
+            
+            <LazyLoad>
             <img
-              className="rounded-3xl mx-auto  "
+              className="rounded-3xl flex-1 mx-auto  "
               src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80"
               alt="meal image"
-              loading="lazy"
             />
+              
+          </LazyLoad>
           </div>
         </div>
       </div>
