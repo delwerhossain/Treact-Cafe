@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from "react";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -8,9 +8,9 @@ import {
   signOut,
   signInWithPopup,
   onAuthStateChanged,
+  updateProfile,
 } from "firebase/auth";
-import { app } from '../firebase/firebase.config';
-
+import { app } from "../firebase/firebase.config";
 
 export const AuthContext = createContext(true);
 const auth = getAuth(app);
@@ -27,9 +27,10 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
   //use name for authentication registration
-  const userName = (name) => {
-    updateProfile(auth.currentUser, {
+  const updateUser = (name, UserPicUrl) => {
+    return updateProfile(auth.currentUser, {
       displayName: name,
+      photoURL: UserPicUrl,
     });
   };
   // sign in part
@@ -68,7 +69,7 @@ const AuthProvider = ({ children }) => {
     user,
     loader,
     createUser,
-    userName,
+    updateUser,
     signInUser,
     signInPopGit,
     signInPopGoogle,

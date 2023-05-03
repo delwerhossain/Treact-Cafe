@@ -1,38 +1,68 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from '../../provider/AuthProvider';
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Register = () => {
-  const { createUser, signInPopGit, signInPopGoogle } = useContext(AuthContext);
+  const { createUser, signInPopGit, signInPopGoogle, updateUser } =
+    useContext(AuthContext);
   // state
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [user, setUser] = useState("");
   const [show, setShow] = useState(false);
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
+    const photoUrl = e.target.pic.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     const confirm = e.target.confirm.value;
+    // console.log(pic , name);
     if (password !== confirm) {
       setError("confirm password not correct");
       return;
     }
-    createUser(email, password)
-      .then((result) => {
-        console.log(result);
-        setUser(result.user);
+    try {
+      const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
+      const user = userCredential.user;
+      await user.updateProfile({
+        displayName: name,
+        photoURL: photoUrl,
+      });
+      setUser(result.user);
         setError("");
         setSuccess("successfully registered");
         document.getElementById("form").reset();
-      })
-      .catch((error) => {
-        console.error(error);
-        setError(error.code);
-        setSuccess("");
-      });
+
+    } catch (error) {
+      console.error(error);
+      setError(error.code);
+      setSuccess("");
+    }
+
+  //   await createUser(email, password);
+    
+  //     .then((result) => {
+  //       // updateUser(name, pic)
+  //       // .then(() => {
+  //       //   setError("");
+  //       //   // ...
+  //       // }).catch((error) => {
+  //       //   console.error(error);
+  //       //   setError(error.code);
+  //       //   setSuccess("");
+  //       // });
+  //       setUser(result.user);
+  //       setError("");
+  //       setSuccess("successfully registered");
+  //       document.getElementById("form").reset();
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //       setError(error.code);
+  //       setSuccess("");
+  //     });
   };
   const handleGooglePopup = () => {
     signInPopGoogle()
@@ -85,6 +115,18 @@ const Register = () => {
             </div>
             <div className="form-control">
               <label className="label">
+                <span className="label-text">Photo</span>
+              </label>
+              <input
+                type="name"
+                placeholder="Photo Url"
+                name="pic"
+                className="input-bordered input"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
                 <span className="label-text">Email</span>
               </label>
               <input
@@ -100,7 +142,7 @@ const Register = () => {
                 <span className="label-text">Password</span>
               </label>
               <input
-                type={show?'text':"password"}
+                type={show ? "text" : "password"}
                 name="password"
                 placeholder="password"
                 className="input-bordered input"
@@ -110,7 +152,7 @@ const Register = () => {
                 <span className="label-text">Confirm password</span>
               </label>
               <input
-                type={show?'text':"password"}
+                type={show ? "text" : "password"}
                 name="confirm"
                 placeholder="confirm password"
                 className="input-bordered input"
@@ -127,9 +169,7 @@ const Register = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">
-                Login
-              </button>
+              <button className="btn btn-primary">Login</button>
             </div>
             <p
               className={`text-xl ${
