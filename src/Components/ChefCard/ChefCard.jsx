@@ -1,6 +1,8 @@
 import React from "react";
 import LazyLoad from "react-lazy-load";
 import { Link } from "react-router-dom";
+import { RiArrowRightUpLine } from 'react-icons/ri';
+import { IconContext } from "react-icons";
 
 const ChefCard = ({ chef }) => {
   const { id, name, image,slogan} = chef;
@@ -19,8 +21,12 @@ const ChefCard = ({ chef }) => {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
 
-          <Link to={`/chef/${id}`} className="btn btn-primary font-bold sm:btn-sm md:btn-md lg:btn-lg">
-            secret recipes{" "}
+          <Link to={`/chef/${id}`} className="btn btn-primary text-xl font-bold sm:btn-sm md:btn-md lg:btn-lg">
+            secret recipes
+            <IconContext.Provider value={{ size: '2em' }}>
+            <RiArrowRightUpLine className="text-white w-6 md:w-7 ml-3" />
+
+            </IconContext.Provider>
           </Link>
         </div>
         <div className="my-4 text-center">

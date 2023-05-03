@@ -3,6 +3,8 @@ import { useLoaderData } from "react-router-dom";
 import ChefCard from "../../Components/ChefCard/ChefCard";
 import HomeBanner from "../../Components/HomeBanner/HomeBanner";
 import HomeChoose from "../../Components/HomeChoose/HomeChoose";
+import MapSection from "../../Components/MapSection/MapSection";
+import MobileBanner from "../../Components/MoblieBanner/MoblieBanner";
 
 const Home = () => {
   const chefsData = useLoaderData();
@@ -22,6 +24,7 @@ const Home = () => {
       </div>
       {/* banner choose */}
       <HomeChoose></HomeChoose>
+      <MobileBanner></MobileBanner>
     </div>
   );
 };

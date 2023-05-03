@@ -3,6 +3,7 @@ import React from 'react';
 import { AiOutlinePlayCircle } from "react-icons/Ai";
 import { IconContext } from "react-icons";
 import LazyLoad from 'react-lazy-load';
+import { Link } from 'react-router-dom';
 
 const HomeBanner = () => {
     return (
@@ -15,18 +16,17 @@ const HomeBanner = () => {
             <h1 className="lg:text-7xl md:text-5xl text-3xl rounded-xl mx-auto md:w-8/12 my-6 py-4 pl-2  bg-[#d6c3ff] text-primary font-extrabold">
               Meals Near You.
             </h1>
-            <p className="text-slate-500 text-xl w-10/12 mx-auto mb-4">
+            <p className="text-slate-500 md:text-xl w-10/12 mx-auto mb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente commodi perspiciatis architecto rerum dolor distinctio quibusdam pariatur blanditiis quos?
             </p>
 
             <div className="lg:flex justify-center gap-12 my-6">
-              <a
-                href="#"
+              <Link to={'register'}
                 className="btn btn-primary font-bold sm:btn-sm md:btn-md lg:btn-lg"
               >
-                Order Now
-              </a>
+                Register Now
+              </Link>
               <a
                 href="#"
                 className="font-bold lg:mt-0 mt-5 flex justify-center items-center text-slate-600"

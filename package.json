@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.17",
+    "@react-google-maps/api": "^2.18.1",
     "daisyui": "^2.51.5",
     "firebase": "^9.21.0",
     "localforage": "^1.10.0",
