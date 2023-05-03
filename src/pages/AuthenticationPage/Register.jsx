@@ -1,16 +1,18 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from '../../provider/AuthProvider';
+import { AuthContext } from "../../provider/AuthProvider";
 import { getAuth, updateProfile } from "firebase/auth";
 
 const auth = getAuth();
 const Register = () => {
-  const { createUser, signInPopGit, signInPopGoogle,updateUser } = useContext(AuthContext);
+  const { createUser, signInPopGit, signInPopGoogle, updateUser } =
+    useContext(AuthContext);
   // state
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [user, setUser] = useState("");
   const [show, setShow] = useState(false);
+  const [accept, setAccept] = useState(false);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -36,16 +38,15 @@ const Register = () => {
         setError(error.code);
         setSuccess("");
       });
-      // updateProfile(auth.currentUser, {
-      //   displayName: name, photoURL: pic
-      // }).then(() => {
-      //   // Profile updated!
-      //   // ...
-      // }).catch((error) => {
-      //   // An error occurred
-      //   // ...
-      // });
-    
+    // updateProfile(auth.currentUser, {
+    //   displayName: name, photoURL: pic
+    // }).then(() => {
+    //   // Profile updated!
+    //   // ...
+    // }).catch((error) => {
+    //   // An error occurred
+    //   // ...
+    // });
   };
   const handleGooglePopup = () => {
     signInPopGoogle()
@@ -125,7 +126,7 @@ const Register = () => {
                 <span className="label-text">Password</span>
               </label>
               <input
-                type={show?'text':"password"}
+                type={show ? "text" : "password"}
                 name="password"
                 placeholder="password"
                 className="input-bordered input"
@@ -135,7 +136,7 @@ const Register = () => {
                 <span className="label-text">Confirm password</span>
               </label>
               <input
-                type={show?'text':"password"}
+                type={show ? "text" : "password"}
                 name="confirm"
                 placeholder="confirm password"
                 className="input-bordered input"
@@ -151,10 +152,15 @@ const Register = () => {
                 </a>
               </label>
             </div>
+            {/* check box */}
+            <div className="form-control">
+  <label className="label cursor-pointer">
+    <span className="label-text">Accept terms and conditions</span> 
+    <input type="checkbox" onClick={()=>setAccept(!accept)} className="checkbox checkbox-primary" />
+  </label>
+</div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">
-                Login
-              </button>
+              <button disabled={!accept} className="btn btn-primary">Login</button>
             </div>
             <p
               className={`text-xl ${
