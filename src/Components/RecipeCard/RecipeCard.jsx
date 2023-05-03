@@ -2,18 +2,28 @@ import React, { useState } from "react";
 import LazyLoad from "react-lazy-load";
 import { BsHeart, BsHeartFill } from 'react-icons/bs';
 import { IconContext } from "react-icons";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RecipeCard = ({ recipe }) => {
   const { name, image, ingredients } = recipe;
-  const [ love ,setLove ] = useState(false)
+  const [love, setLove] = useState(false)
+  const handleLove = () => {
+    if (love) {
+      toast("all ready added!")
+      return
+    }
+    setLove(true)
+    toast("love added!")
+  }
   return (
     <div>
       <div className="bg-slate-50 grid gap-4 border lg:w-8/12 mx-auto  rounded-2xl items-center justify-center ">
         <div className="my-4 text-center">
             
-          <button className="text-primary" onClick={()=>setLove(!love)}>
+          <button className="text-primary" onClick={handleLove}>
           <IconContext.Provider value={{ size: '3em' }}>
-          {love ?<BsHeart /> :<BsHeartFill />}
+          {!love ?<BsHeart /> :<BsHeartFill />}
         </IconContext.Provider>
              
           </button>
@@ -40,6 +50,7 @@ const RecipeCard = ({ recipe }) => {
           </LazyLoad>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
