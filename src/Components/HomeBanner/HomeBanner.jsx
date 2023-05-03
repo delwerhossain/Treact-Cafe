@@ -16,7 +16,7 @@ const HomeBanner = () => {
             </h1>
             <p className="text-slate-500 text-xl w-10/12 mx-auto mb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente commodi perspiciatis architecto rerum dolor distinctio quibusdam pariatur blanditiis quos?
             </p>
 
             <div className="lg:flex justify-center gap-12 my-6">
