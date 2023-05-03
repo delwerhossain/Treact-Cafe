@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import LazyLoad from "react-lazy-load";
-import { AiOutlineHeart } from 'react-icons/ai';
 
 const RecipeCard = ({ recipe }) => {
   const { name, image, ingredients } = recipe;
