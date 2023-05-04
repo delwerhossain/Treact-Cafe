@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import RecipeCard from "../../Components/RecipeCard/RecipeCard";
 import LazyLoad from "react-lazy-load";
-
 const ChefDetails = () => {
   const chefData = useLoaderData();
   // const paramId = useParams()
@@ -30,16 +29,10 @@ const ChefDetails = () => {
             {slogan}
           </h1>
           <div className="py-4 pl-2  rounded-xl mx-auto md:w-8/12  bg-violet-50 lg:text-3xl mb-4 text-2xl  font-bold">
-          <h1 className="">
-            experience {experience}
-          </h1>
-          <h1 className="">
-            Total Recipes - {totalRecipes}
-          </h1>
-          <h1 className="">
-            Total Likes - {likes}
-          </h1>
-
+            <h1 className="">experience {experience}</h1>
+            <h1 className="">Total Recipes - {totalRecipes}</h1>
+            <h1 className="">Total Likes - {likes}</h1>
+        
           </div>
 
           <p className="text-slate-500 md:text-xl w-10/12 mx-auto mb-4">

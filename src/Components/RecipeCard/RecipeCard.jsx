@@ -4,6 +4,8 @@ import { BsHeart, BsHeartFill } from 'react-icons/bs';
 import { IconContext } from "react-icons";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ReactStars from "react-stars";
+
 
 const RecipeCard = ({ recipe }) => {
   const { name, image, ingredients } = recipe;
@@ -31,6 +33,19 @@ const RecipeCard = ({ recipe }) => {
           <h1 className="lg:text-7xl md:text-3xl text-3xl  font-extrabold">
             {name}
           </h1>
+          <div className=" w-32 mx-auto ">
+              <ReactStars className=""
+                count={5}
+                value={4.5}
+                size={24}
+                isHalf={true}
+                emptyIcon={<i className="far fa-star"></i>}
+                halfIcon={<i className="fa fa-star-half-alt"></i>}
+                fullIcon={<i className="fa fa-star"></i>}
+                activeColor="#ffd700"
+              />
+              
+            </div>
 
           <p className="text-slate-100 md:text-xl font-bold my-4 rounded-3xl py-8  bg-slate-800 md:w-10/12 w-11/12 mx-auto mb-4">
             {ingredients.map((item) => (
