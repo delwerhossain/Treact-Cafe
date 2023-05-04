@@ -32,27 +32,28 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         updateProfile(result.user, {
-          displayName: name, photoURL: pic
-        }).then(() => {
-          // Profile updated!
-          // ...
-        }).catch((error) => {
-          // An error occurred
-          // ...
-        });
+          displayName: name,
+          photoURL: pic,
+        })
+          .then(() => {
+            // Profile updated!
+            // ...
+          })
+          .catch((error) => {
+            // An error occurred
+            // ...
+          });
         setUser(result.user);
         setError("");
-        setSuccess("successfully registered");
-        
-      
-        navigate('/')
+        setSuccess("successfully registered");      
+
+        window.location.reload(true);
       })
       .catch((error) => {
         console.error(error);
         setError(error.code);
         setSuccess("");
       });
-    
   };
   const handleGooglePopup = () => {
     signInPopGoogle()

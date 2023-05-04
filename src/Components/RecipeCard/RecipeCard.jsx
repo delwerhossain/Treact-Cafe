@@ -12,11 +12,11 @@ const RecipeCard = ({ recipe }) => {
   const [love, setLove] = useState(false)
   const handleLove = () => {
     if (love) {
-      toast("all ready added!")
+      toast.error("all ready added!")
       return
     }
     setLove(true)
-    toast("love added!")
+    toast.success("love added!")
   }
   return (
     <div>
@@ -64,8 +64,18 @@ const RecipeCard = ({ recipe }) => {
             />
           </LazyLoad>
         </div>
-      </div>
-      <ToastContainer />
+      </div><ToastContainer
+position="top-right"
+autoClose={1000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+/>
     </div>
   );
 };
