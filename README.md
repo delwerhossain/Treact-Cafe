@@ -14,17 +14,8 @@ npm install recharts
 npm install react-icons --save
 ```
 
-# install-package
 
-- Tailwindcss
-- Daisy UI
-- React router
-- Recharts
-- Hero Icon
-- firebase
-- more packages etc.
-
-# Treact <a name="TOP"></a>
+# Treact Food Chef <a name="TOP"></a>
 
 > React
 >
