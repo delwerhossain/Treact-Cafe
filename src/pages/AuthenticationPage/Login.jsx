@@ -23,7 +23,6 @@ const Login = () => {
    const password = e.target.password.value;
    signInUser(email, password)
      .then((result) => {
-       console.log(result);
        setUser(result.user);
        setError("");
        setSuccess("successfully login");
@@ -41,7 +40,6 @@ const Login = () => {
  const handleGooglePopup = () => {
    signInPopGoogle()
      .then((result) => {
-       console.log(result);
        setUser(result.user);
        setError("");
        setSuccess("successfully Login with Google");

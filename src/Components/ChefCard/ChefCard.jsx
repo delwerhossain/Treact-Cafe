@@ -6,7 +6,7 @@ import { IconContext } from "react-icons";
 
 const ChefCard = ({ chef }) => {
   const { id, name, image, slogan, experience, totalRecipes, likes } = chef;
-  console.log(likes);
+
   return (
     <div className="my-10 w-11/12 mx-auto border py-4 px-2 rounded-2xl">
       <div className="grid gap-4 md:grid-cols-2 items-center md:justify-center ">

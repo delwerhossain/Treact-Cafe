@@ -25,7 +25,6 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const confirm = e.target.confirm.value;
-    console.log(name, pic);
     if (password !== confirm) {
       setError("confirm password not correct");
       return;
@@ -58,7 +57,6 @@ const Register = () => {
   const handleGooglePopup = () => {
     signInPopGoogle()
       .then((result) => {
-        console.log(result);
         setUser(result.user);
         setError("");
         setSuccess("successfully registered with Google");
@@ -72,7 +70,6 @@ const Register = () => {
   const handleGitPopup = () => {
     signInPopGit()
       .then((result) => {
-        console.log(result);
         setUser(result.user);
         setError("");
         setSuccess("successfully registered with Git ");

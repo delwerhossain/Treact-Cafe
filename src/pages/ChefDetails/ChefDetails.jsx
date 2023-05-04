@@ -16,7 +16,6 @@ const ChefDetails = () => {
 
   const { id, name, slogan, image, recipes, experience, totalRecipes, likes } =
     chefData;
-  console.log(recipes);
 
   return (
     <div className="my-10 w-11/12 mx-auto border py-4 px-2 rounded-2xl">
