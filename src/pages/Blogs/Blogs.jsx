@@ -1,4 +1,6 @@
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import React from "react";
+import PDFFile from "../../Components/PDFFile/PDFFile";
 
 const Blogs = () => {
   return (
@@ -34,10 +36,21 @@ const Blogs = () => {
           />
         </svg>
       </div>
+
       <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
+              <PDFDownloadLink document={<PDFFile />} filename="FORM">
+                {({ loading }) =>
+                  loading ? (
+                    <button className="btn ">Loading Document...</button>
+                  ) : (
+                    <button className="btn btn-primary mb-3">pdf Download</button>
+                  )
+                }
+              </PDFDownloadLink>
+              {/* <PDFFile /> */}
               <p className="text-base font-semibold leading-7 bg-indigo-50 w-4/5 rounded-lg px-4 text-indigo-600">
                 Questions & Answers Part
               </p>
@@ -64,23 +77,30 @@ const Blogs = () => {
           <div className="lg:pr-4">
             <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
               <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
-              Tell us the differents between uncontrolled and controlled components??
+                Tell us the differents between uncontrolled and controlled
+                components??
               </h2>
               <p className="mt-6">
                 {" "}
                 <span className="bg-blue-50 p-2 block text-xl font-bold rounded-lg w-3/5">
-                Controlled Components
+                  Controlled Components
                 </span>
-                Controlled components are those components that are fully controlled by React. This means that React manages all aspects of the component's state and behavior, events, and rendering. In other words, the component's state is stored in React's state and updated using the setState() method. The data flows from the parent component to the child component via props..
-
-
+                Controlled components are those components that are fully
+                controlled by React. This means that React manages all aspects
+                of the component's state and behavior, events, and rendering. In
+                other words, the component's state is stored in React's state
+                and updated using the setState() method. The data flows from the
+                parent component to the child component via props..
               </p>
               <p className="mt-6">
                 {" "}
                 <span className="bg-blue-50 p-2 block text-xl font-bold rounded-lg w-3/5">
-                UnControlled Components
+                  UnControlled Components
                 </span>
-                Uncontrolled components, on the other hand, are those components that are not fully controlled by React. This means that React does not manage all aspects of the component's state and behavior, and some of its behavior is left up to the browser
+                Uncontrolled components, on the other hand, are those components
+                that are not fully controlled by React. This means that React
+                does not manage all aspects of the component's state and
+                behavior, and some of its behavior is left up to the browser
               </p>
               <img
                 className=" my-3 rounded-lg"
@@ -88,14 +108,20 @@ const Blogs = () => {
                 alt=""
               />
               <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
-              How to validate React props Using proptypes ??
+                How to validate React props Using proptypes ??
               </h2>
               <p className="mt-6 bg-green-100 rounded-lg p-6">
                 <ul className="list-decimal hover:list-disc">
                   <p className="">
-                 <span className="font-bold"> React Props Validation :</span> In React, you can use the PropTypes library to validate the props that are passed to a component. PropTypes is a library that allows you to specify the type and shape of the props that a component should receive. It's a good practice to validate your props because it helps catch errors early and makes your code more maintainable.Here's an example of how to use PropTypes to validate a comp.
+                    <span className="font-bold"> React Props Validation :</span>{" "}
+                    In React, you can use the PropTypes library to validate the
+                    props that are passed to a component. PropTypes is a library
+                    that allows you to specify the type and shape of the props
+                    that a component should receive. It's a good practice to
+                    validate your props because it helps catch errors early and
+                    makes your code more maintainable.Here's an example of how
+                    to use PropTypes to validate a comp.
                   </p>
-                
                 </ul>
                 <img
                   className=" my-3 rounded-lg"
@@ -104,33 +130,51 @@ const Blogs = () => {
                 />
               </p>
               <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
-              Tell Us the difference between Node.js and Express.js ??
+                Tell Us the difference between Node.js and Express.js ??
               </h2>
               <p className="mt-6">
-                <span className="text-2xl font-bold mr-2">Node Js :</span>  Node.js is a runtime environment for executing JavaScript code outside of a web browser. It is built on the V8 JavaScript engine and provides a way to run JavaScript on the server-side. Node.js provides many built-in modules, such as http, fs, and path, which allow developers to build server-side applications that can perform tasks like serving web pages, handling file uploads, and interacting with databases..
+                <span className="text-2xl font-bold mr-2">Node Js :</span>{" "}
+                Node.js is a runtime environment for executing JavaScript code
+                outside of a web browser. It is built on the V8 JavaScript
+                engine and provides a way to run JavaScript on the server-side.
+                Node.js provides many built-in modules, such as http, fs, and
+                path, which allow developers to build server-side applications
+                that can perform tasks like serving web pages, handling file
+                uploads, and interacting with databases..
               </p>
               <p className="mt-6">
-                <span className="text-2xl font-bold mr-2">Express Js :</span>   Express.js, on the other hand, is a web application framework built on top of Node.js. It provides a set of abstractions for building web applications, such as middleware for handling HTTP requests and responses, routing for mapping URLs to functions, and templating engines for rendering HTML pages. Express.js makes it easier to build web applications in Node.js by providing a set of useful features and abstractions.
+                <span className="text-2xl font-bold mr-2">Express Js :</span>{" "}
+                Express.js, on the other hand, is a web application framework
+                built on top of Node.js. It provides a set of abstractions for
+                building web applications, such as middleware for handling HTTP
+                requests and responses, routing for mapping URLs to functions,
+                and templating engines for rendering HTML pages. Express.js
+                makes it easier to build web applications in Node.js by
+                providing a set of useful features and abstractions.
               </p>
               <img
-                  className=" my-3 rounded-lg"
-                  src="https://i.ibb.co/GCbJzQ6/Express-JS-vs-Node-JS-Why-its-Time-to-Migrate-1.png"
-                  alt=""
-                />
+                className=" my-3 rounded-lg"
+                src="https://i.ibb.co/GCbJzQ6/Express-JS-vs-Node-JS-Why-its-Time-to-Migrate-1.png"
+                alt=""
+              />
               <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
-              What is custom hook ?? And Why will You create a custom hook ?
+                What is custom hook ?? And Why will You create a custom hook ?
               </h2>
               <p className="mt-6">
                 <span className="bg-blue-50 p-2 block text-xl font-bold rounded-lg w-3/5 ">
-                Node Js :
+                  Node Js :
                 </span>{" "}
-               In React, a custom hook is a JavaScript function that allows you to reuse logic across multiple components. Custom hooks enable you to extract stateful logic from components so that it can be reused in other components. Custom hooks follow the naming convention of starting with the word "use"..
+                In React, a custom hook is a JavaScript function that allows you
+                to reuse logic across multiple components. Custom hooks enable
+                you to extract stateful logic from components so that it can be
+                reused in other components. Custom hooks follow the naming
+                convention of starting with the word "use"..
               </p>
               <img
-                  className=" my-3 rounded-lg"
-                  src="https://i.ibb.co/4pWVSBV/React-Hooks-Custom.png"
-                  alt=""
-                />
+                className=" my-3 rounded-lg"
+                src="https://i.ibb.co/4pWVSBV/React-Hooks-Custom.png"
+                alt=""
+              />
             </div>
           </div>
         </div>
