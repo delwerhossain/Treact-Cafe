@@ -13,10 +13,13 @@ npm install recharts
 npm install react-icons --save
 ```
 
-***install-package
-1. Tailwindcss
-2. Daisy UI
-3. React router
-4. Recharts 
-5. Hero Icon
-6. firebase
+# install-package
+
+- Tailwindcss
+- Daisy UI
+- React router
+- Recharts 
+- Hero Icon
+- firebase
+- more  packages etc.
+

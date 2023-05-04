@@ -1,9 +1,24 @@
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import React from "react";
+import React, { useEffect } from "react";
 import PDFFile from "../../Components/PDFFile/PDFFile";
+import Loading from "../../Components/Loading/Loading";
 
 const Blogs = () => {
-  return (
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    if (loading) {
+      setTimeout(() => {
+        setLoading(false);
+      }, 500);
+    }
+  }, []);
+
+  return loading ? (
+    <div className="grid justify-center items-center">
+      <Loading />
+    </div>
+  ) : (
     <div className=" my-8 relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <svg
