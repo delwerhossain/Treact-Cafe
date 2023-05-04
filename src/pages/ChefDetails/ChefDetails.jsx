@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import RecipeCard from "../../Components/RecipeCard/RecipeCard";
 import LazyLoad from "react-lazy-load";
+import Loading from "../../Components/Loading/Loading";
 const ChefDetails = () => {
   const chefData = useLoaderData();
   // const paramId = useParams()
@@ -17,7 +18,20 @@ const ChefDetails = () => {
   const { id, name, slogan, image, recipes, experience, totalRecipes, likes } =
     chefData;
 
-  return (
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+      if (loading) {
+        setTimeout(() => {
+          setLoading(false);
+        }, 300);
+      }
+    }, []);
+  
+    return loading ? (
+      <div className="grid justify-center items-center">
+        <Loading />
+      </div>
+    ) : (
     <div className="my-10 w-11/12 mx-auto border py-4 px-2 rounded-2xl">
       <div className="grid gap-4  items-center justify-center ">
         <div className="my-4 text-center">
