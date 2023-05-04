@@ -12,9 +12,9 @@ const HomeBanner = () => {
         <div className="my-4 flex-1 text-center">
           <h1 className="lg:text-7xl md:text-3xl text-3xl  font-extrabold">
             Delicious & Affordable{" "}
-            <span className="bg-violet-200 rounded-xl p-2">Italian food</span>
+            <span className="bg-violet-200 mt-2 w-10/12 mx-auto rounded-xl block p-2">Italian food</span>
           </h1>
-          <h1 className="lg:text-7xl md:text-5xl text-3xl rounded-xl mx-auto md:w-8/12 my-6 py-4 pl-2  bg-[#d6c3ff] text-primary font-extrabold">
+          <h1 className="lg:text-7xl md:text-5xl text-3xl rounded-xl mx-auto md:w-8/12 my-4 py-4 pl-2  bg-[#d6c3ff]   text-primary font-extrabold">
             Meals Near You.
           </h1>
           <p className="text-slate-500 md:text-xl w-10/12 mx-auto mb-4">

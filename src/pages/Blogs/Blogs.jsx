@@ -1,16 +1,16 @@
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PDFFile from "../../Components/PDFFile/PDFFile";
 import Loading from "../../Components/Loading/Loading";
 
 const Blogs = () => {
   const [loading, setLoading] = useState(true);
-  
+
   useEffect(() => {
     if (loading) {
       setTimeout(() => {
         setLoading(false);
-      }, 500);
+      }, 300);
     }
   }, []);
 
