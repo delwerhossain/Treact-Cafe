@@ -2,22 +2,30 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { getAuth, updateProfile } from "firebase/auth";
+import { ToastContainer, toast } from "react-toastify";
 
 const auth = getAuth();
 
 const Register = () => {
   const { createUser, signInPopGit, signInPopGoogle, updateUser } =
-    useContext(AuthContext);
+  useContext(AuthContext);
   // state
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [user, setUser] = useState("");
   const [show, setShow] = useState(false);
   const [accept, setAccept] = useState(false);
-
+  
   //navigation
   const navigate = useNavigate();
-
+  
+  const handleSignOut = () => {
+    signOutUser()
+      .then(() => {})
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   const handleRegister = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -36,8 +44,6 @@ const Register = () => {
           photoURL: pic,
         })
           .then(() => {
-            // Profile updated!
-            // ...
           })
           .catch((error) => {
             // An error occurred
@@ -45,14 +51,14 @@ const Register = () => {
           });
         setUser(result.user);
         setError("");
-        setSuccess("successfully registered");      
-
+        toast.success("successfully registered");
+        setSuccess("successfully registered---");
         window.location.reload(true);
       })
       .catch((error) => {
         console.error(error);
         setError(error.code);
-        setSuccess("");
+        toast.error(error.code);
       });
   };
   const handleGooglePopup = () => {
@@ -227,6 +233,18 @@ const Register = () => {
           </form>
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 };

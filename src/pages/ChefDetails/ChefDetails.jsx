@@ -23,7 +23,7 @@ const ChefDetails = () => {
       if (loading) {
         setTimeout(() => {
           setLoading(false);
-        }, 300);
+        }, 250);
       }
     }, []);
   

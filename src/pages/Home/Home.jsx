@@ -14,7 +14,7 @@ const Home = () => {
     if (loading) {
       setTimeout(() => {
         setLoading(false);
-      }, 500);
+      }, 300);
     }
   }, []);
 
