@@ -11,10 +11,10 @@ const ChefCard = ({ chef }) => {
     <div className="my-10 w-11/12 mx-auto border py-4 px-2 rounded-2xl">
       <div className="grid gap-4 md:grid-cols-2 items-center md:justify-center ">
         <div className="my-4 text-center">
-          <h1 className="lg:text-7xl md:text-3xl text-3xl  font-extrabold">
+          <h1 className="lg:text-5xl md:text-3xl text-3xl  font-extrabold">
             {name}
           </h1>
-          <h1 className="lg:text-6xl md:text-4xl text-3xl rounded-xl mx-auto md:w-8/12 mt-6 mb-4 py-4 pl-2  bg-[#b795ff] text-white font-extrabold">
+          <h1 className="lg:text-5xl md:text-4xl text-3xl rounded-xl mx-auto md:w-8/12 mt-6 mb-4 py-4 pl-2  bg-[#b795ff] text-white font-extrabold">
             {slogan}
           </h1>
           <div className="py-4 pl-2  rounded-xl mx-auto md:w-8/12  bg-violet-50 lg:text-3xl mb-4 text-2xl  font-bold">

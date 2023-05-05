@@ -12,7 +12,7 @@ const HomeChoose = () => {
         </p>
         <div className="  flex md:gap-12 lg:flex-row flex-col-reverse lg: items-center md:justify-center mx-auto md:w-10/12 ">
           <div className=" flex-1 my-4 text-start">
-            <h1 className="lg:text-7xl md:text-5xl text-3xl  font-extrabold">
+            <h1 className="lg:text-6xl md:text-5xl text-3xl  font-extrabold">
               Why{" "}
               <span className=" bg-[#580cfc] text-white px-2 ">
                 Choose Us ?

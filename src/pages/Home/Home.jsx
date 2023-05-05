@@ -27,7 +27,7 @@ const Home = () => {
       <HomeBanner></HomeBanner>
 
       <div>
-        <h1 className="lg:text-7xl md:text-5xl text-4xl mb-6  font-extrabold text-center underline text-ellipsis">
+        <h1 className="lg:text-6xl md:text-5xl text-4xl mb-6  font-extrabold text-center underline text-ellipsis">
           {" "}
           Ours <span className="text-[#580cfc]">Chef</span>
         </h1>

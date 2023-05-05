@@ -30,7 +30,7 @@ const RecipeCard = ({ recipe }) => {
              
           </button>
 
-          <h1 className="lg:text-7xl md:text-3xl text-3xl  font-extrabold">
+          <h1 className="lg:text-5xl md:text-3xl text-3xl  font-extrabold">
             {name}
           </h1>
           <div className=" w-32 mx-auto ">
