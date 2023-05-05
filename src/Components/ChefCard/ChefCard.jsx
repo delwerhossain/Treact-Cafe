@@ -9,7 +9,7 @@ const ChefCard = ({ chef }) => {
 
   return (
     <div className="my-10 w-11/12 mx-auto border py-4 px-2 rounded-2xl">
-      <div className="grid gap-4 md:grid-cols-2 items-center md:justify-center ">
+      <div className="grid gap-4 lg:grid-cols-2 items-center md:justify-center ">
         <div className="my-4 text-center">
           <h1 className="lg:text-5xl md:text-3xl text-3xl  font-extrabold">
             {name}
@@ -46,7 +46,7 @@ const ChefCard = ({ chef }) => {
           {" "}
           <LazyLoad>
           <img
-            className="rounded-3xl mx-auto md:w-[400px] md:h-[320px]  lg:w-[640px] lg:h-[450px]"
+            className="rounded-3xl mx-auto md:w-11/12 lg:w-[640px] lg:h-[450px]"
             src={image}
             alt={name}
           />

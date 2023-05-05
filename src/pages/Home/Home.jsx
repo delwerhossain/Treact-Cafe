@@ -26,7 +26,7 @@ const Home = () => {
     <div className="my-6">
       <HomeBanner></HomeBanner>
 
-      <div>
+      <div className="md:my-28 my-16">
         <h1 className="lg:text-6xl md:text-5xl text-4xl mb-6  font-extrabold text-center underline text-ellipsis">
           {" "}
           Ours <span className="text-[#580cfc]">Chef</span>
