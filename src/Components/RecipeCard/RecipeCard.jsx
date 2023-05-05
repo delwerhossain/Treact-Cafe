@@ -20,7 +20,7 @@ const RecipeCard = ({ recipe }) => {
   }
   return (
     <div>
-      <div className="bg-slate-50 grid gap-4 border lg:w-8/12 mx-auto  rounded-2xl items-center justify-center ">
+      <div className="bg-slate-100 grid gap-4 border lg:w-8/12 mx-auto  rounded-2xl items-center justify-center ">
         <div className="my-4 text-center">
             
           <button className="text-primary" onClick={handleLove}>

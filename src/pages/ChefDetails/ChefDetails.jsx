@@ -67,10 +67,10 @@ const ChefDetails = () => {
           </LazyLoad>
         </div>
         <div className="rounded-xl">
-          <h1 className="lg:text-6xl md:text-4xl text-3xl rounded-xl mx-auto md:w-11/12 text-center my-6 py-4 pl-2  bg-[#581fd1] text-white font-extrabold">
+          <h1 className="lg:text-6xl md:text-4xl text-3xl rounded-xl mx-auto md:w-11/12 text-center my-10 py-4 pl-2  bg-[#581fd1] text-white font-extrabold">
             Secret Recipes
           </h1>
-          <div className="grid grid-cols-1 gap-12  ">
+          <div className="grid grid-cols-1 md:gap-14 gap-10 md:my-28 my-16  ">
             {recipes.map((recipe) => (
               <RecipeCard key={recipe.id} recipe={recipe}></RecipeCard>
             ))}

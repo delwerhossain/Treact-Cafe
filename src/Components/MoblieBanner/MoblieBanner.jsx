@@ -5,7 +5,7 @@ import { IoLogoGooglePlaystore} from "react-icons/io5";
 
 const MobileBanner = () => {
   return (
-    <div className="bg-slate-900 py-16 my-24">
+    <div className="bg-slate-900 py-16 my-28">
       <div className="lg:flex-row flex flex-col  items-center  w-11/12 mx-auto">
         <div className="mb-16 w-10/12 mx-auto flex-1">
           <p className="text-yellow-500 md:text-2xl text-xl font-bold">
